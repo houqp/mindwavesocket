@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}Mindwaves Socket{% endblock %}
+
+{% block extra_js %}
+<script src="/static/js/rickshawdirective.js"></script>
+<script src="/static/js/spectrumdirective.js"></script>
+<script src="/static/js/mindmetrics.js"></script>
+{% endblock %}
+
+{% block content %}
+<div ng-app="mindmetrics">
+  <div ng-controller="MetricController">
+	<div id="spectrum-char">
+		<div class="spectrum" ng-repeat="spec in spectrum_list">
+			<!--<spectrum list="spec"></spectrum>-->
+		</div>
+	</div>
+
+	<rickshaw-fixed-timeseries
+	  series="sec_metric_esenses_series">
+	</rickshaw-fixed-timeseries>
+
+	<rickshaw-fixed-timeseries
+	  series="sec_metric_wave_vector_series">
+	</rickshaw-fixed-timeseries>
+
+	<rickshaw-fixed-timeseries
+	  series="sec_metric_alpha_series">
+	</rickshaw-fixed-timeseries>
+
+	<rickshaw-fixed-timeseries
+	  series="sec_metric_gamma_series">
+	</rickshaw-fixed-timeseries>
+
+	<rickshaw-fixed-timeseries
+	  series="sec_metric_beta_series">
+	</rickshaw-fixed-timeseries>
+
+	<rickshaw-fixed-timeseries
+	  series="sec_metric_theta_series">
+	</rickshaw-fixed-timeseries>
+
+	<rickshaw-fixed-timeseries
+	  series="sec_metric_delta_series">
+	</rickshaw-fixed-timeseries>
+
+	<rickshaw-fixed-timeseries
+	  series="sec_metric_atten_beta_series">
+	</rickshaw-fixed-timeseries>
+
+	<rickshaw-fixed-timeseries
+	  series="sec_metric_medita_alpha_series">
+	</rickshaw-fixed-timeseries>
+
+    <div id="metric-log">
+      <div id="attention-metric-log">
+        <h4>attention</h4>
+        <p ng-repeat="am in attention_metrics.slice(0, 10)">
+          [[ am.value ]], [[ am.timestamp ]]
+        </p>
+      </div>
+
+      <div id="meditation-metric-log">
+        <h4>meditation</h4>
+        <p ng-repeat="mm in meditation_metrics.slice(0, 10)">
+          [[ mm.value ]], [[ mm.timestamp ]]
+        </p>
+      </div>
+
+      <div id="alpha-waves-metric-log">
+        <h4>alpha waves metrics</h4>
+        <p ng-repeat="aw in alpha_waves_metrics.slice(0, 10)">
+          [[ aw.value ]], [[ aw.timestamp ]]
+        </p>
+      </div>
+
+      <div id="beta-waves-metric-log">
+        <h4>alpha waves metrics</h4>
+        <p ng-repeat="aw in alpha_waves_metrics.slice(0, 10)">
+          [[ aw.value ]], [[ aw.timestamp ]]
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

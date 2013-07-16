@@ -1,0 +1,52 @@
+body {
+  background-color: #555;
+}
+
+#attention-metric-log {
+  float: left;
+  display: inline;
+}
+
+#meditation-metric-log, #alpha-waves-metric-log, #beta-waves-metric-log {
+  margin-left: 20px;
+  float: left;
+  display: inline;
+}
+
+.chart-container {
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+}
+
+.metric-chart {
+  padding: 5px;
+  background-color: #eee;
+  box-shadow: 5px 5px 5px #333;
+  position: relative;
+}
+
+.chart-legend {
+  margin-top: 5px;
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.rs-graph-block {
+  display: inline;
+}
+
+.spectrum {
+  display: inline-block;
+}
+
+.spectrum-elem {
+  padding: 1px;
+  padding-left: 5px;
+  display: block;
+}
+
+#metric-log {
+  color: #ccc;
+}
